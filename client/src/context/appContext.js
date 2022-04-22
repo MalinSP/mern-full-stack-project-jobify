@@ -59,7 +59,7 @@ const initialState = {
   statusOptions: ['interview', 'declined', 'pending'],
   status: 'pending',
   jobs: [],
-  totalJobs: 0,
+  totalJobs: 100,
   numOfPages: 1,
   page: 1,
   stats: {},
@@ -263,6 +263,7 @@ const AppProvider = ({ children }) => {
     const { page, search, searchStatus, searchType, sort } = state
 
     let url = `/jobs?page=${page}&status=${searchStatus}&jobType=${searchType}&sort=${sort}`
+    console.log(url)
     if (search) {
       url = url + `&search=${search}`
     }
